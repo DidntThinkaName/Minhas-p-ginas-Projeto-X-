@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <main id="container">
+        <section id="img">
+            <img src="images/treino.svg" alt="" id="img">
+        </section>
+
+        <section id="calculator">
+            <form action="" id="form">
+                <h1 id="title">
+                    Caluladora de IMC
+                </h1>
+
+                <div class="input-box">
+                    <label for="weight">Peso em KG</label>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-weight-scale"></i>
+                        <input type=number" name="weight" id="weight" required>
+                         <span>
+                            kg
+                         </span>
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="input-box">
+                    <label for="height" id>Altura em metros</label>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-ruler"></i>
+                        <input type=number" id="height" step="0.01" name="height" required>
+                         <span>
+                            m
+                         </span>
+                    </div>
+                    
+                    
+                </div>
+
+                <button id="calculate">
+                    Calcular
+                </button>
+
+            </form>
+
+            <div id="info" class="hidden">
+                <div id="result">
+                    <div id="bmi">
+                        <span id="value"></span>
+                        <span>Seu IMC</span>
+                    </div>
+
+                    <div id="description">
+                        <span></span>
+                    </div>
+                    
+                </div>
+            
+           
+
+            <div id="moreinfo">
+                <a href="https://chatgpt.com/?oai-dm=1">Mais informações sobre o IMC
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                    
+             </div>
+            </div>
+            
+    </section>
+        
+ </main>
+    <script src="js/script.js"></script>
+   
+</body>
+</html>

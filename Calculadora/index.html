@@ -1,6 +1,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentativa</title>
+    <title>Calculadora - IMC</title>
     <script defer src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"rel="stylesheet"/>
@@ -64,16 +64,20 @@
 
         <section id="calculator">
             <form action="" id="form">
-                <h1 id="title">
-                    Caluladora de IMC
+                <h1 class="title" id="title">
+                    Calculadora -
                 </h1>
+                <h1 class="title">
+                   IMC
+                </h1>
+                <span id="line"></span>
 
                 <div class="input-box">
                     <label for="weight">Peso em KG</label>
 
                     <div class="input-field">
                         <i class="fa-solid fa-weight-scale"></i>
-                        <input type=number" name="weight" id="weight" autocomplete="off" required>
+                        <input type="number" name="weight" id="weight" autocomplete="off" required>
                          <span>
                             kg
                          </span>
@@ -87,7 +91,7 @@
 
                     <div class="input-field">
                         <i class="fa-solid fa-ruler"></i>
-                        <input type=number" id="height" step="0.01" name="height" autocomplete="off" required>
+                        <input type="number" id="height" step="0.01" name="height" autocomplete="off" required>
                          <span>
                             m
                          </span>
@@ -99,7 +103,7 @@
                   <label for="age">Sua idade</label>
 
                   <div class="idade-field">
-                      <input type=number" id="ageinput" step="0.01" name="age" autocomplete="off" required>
+                      <input type="number" id="ageinput" step="0.01" name="age" autocomplete="off" required>
                        <span>
                        </span>
                   </div>                                       

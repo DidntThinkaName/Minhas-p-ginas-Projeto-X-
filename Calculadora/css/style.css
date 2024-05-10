@@ -1,6 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --bg-third:var(#000000);
 
-*{
+    --transition-speed: 600ms;
+  }
+
+  *{
     font-family: 'Poppins';
     margin: 0;
     padding: 0;
@@ -8,25 +18,139 @@
 
 }
 
-body{
+  body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: #18181b;
+    background-color: var(--bg-secondary);
+  }
 
-}
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  
+  main {
+    margin-left: 20rem;
+    padding: 1rem;
+    
+  }
+
+
+  
+  .navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 600ms ease;
+    overflow: scroll;
+   
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav-item {
+    width: 100%;
+  }
+  
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    background-color: var(--bg-primary);
+    transition: var(--transition-speed);
+  }
+  
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(2);
+    background: var(--special);
+    color: var(--text-secondary);
+
+  }
+  
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+  }
+
+  .navbar::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .nav-link i {
+   font-size: 175%;
+   margin-left: 1.5rem;
+  }
+  
+ 
+  
+  .fa-primary,
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+  
+  .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  
+  .logo-text
+  {
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+  }
+
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
 
 #container{
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 3.5rem;
+    
     
 }
 
 #img img{
-    width: 32rem;
+    width: 32rem; 
 }
 
 #calculator{
@@ -34,9 +158,10 @@ body{
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    color: #f8fafc;
-    background-color: #262626;
+    color: var(--text-secondary);
+    background-color: var(--bg-third);
     border-radius: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 #form{
@@ -49,7 +174,7 @@ body{
 #title{
     font-size: 2.25rem;
     position: relative;
-    background-color: #6C63FF;
+    background-color: var(--special);
     width: 22rem;
     height:3px;;
     margin-bottom: 40px;
@@ -59,7 +184,7 @@ body{
 title::after{
     position: absolute;
     content: '';
-    background-color: #6C63FF;
+    background-color: var(--special);
     width: 8rem;
     height: 3px;
     bottom: 0;
@@ -71,6 +196,7 @@ title::after{
     font-size: 1.1rem;
     color: #cbd5e1;
     font-weight: 500;
+    
 
 }
 
@@ -78,39 +204,68 @@ title::after{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #3f3f46;
+    background-color: var(--bg-secondary);
     padding: 0.3rem;
     border-radius: 3px;
     margin-top: 3px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
 }
 
 .input-field span,
 .input-field i{
-    color: #cbd5e1;
+    color: var(--text-primary);
     font-size: 1.3rem;
     padding: 0.6 1rem;
     margin-right: 5px;
+   
 }
 
 .input-field input{
-    background-color: transparent;
+    background-color: var(--bg-secondary);
     border: none;
     width: 100%;
-    color: #f8fafc;
+    color: var(--text-primary);
     font-size: 1.3rem;
-    color: f8fafc;
     padding:  0 0.5rem;
 
 }
 
-.input-field i{
-    margin-left: 6px;
-
+.idade label {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 500;
 }
 
+.idade-field{
+    margin-top: 0.5rem;
+    background-color: var(--bg-secondary);
+    border: none;
+    width: 60px;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    padding:  0 0.5rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    
+   
+}
+
+
+.idade-field input{
+    margin-top: 0.5rem;
+    background-color: var(--bg-secondary);
+    border: none;
+    width: 50px;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    padding:  0 0.5rem;
+    
+}
+
+
 .input-field i:hover{
-    color: #6C63FF;
+    color: var(--special);
 }
 .input-field input::-webkit-inner-spin-button,
 .input-field input::-webkit-outer-spin-button{
@@ -123,16 +278,27 @@ title::after{
 
 }
 
+.idade-field input::-webkit-inner-spin-button,
+.idade-field input::-webkit-outer-spin-button{
+    appearance: none;
+
+}
+
+.idade-field input:focus{
+    outline: none;
+
+}
 
 #calculate{
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
-    background-color: #6C63FF;
+    background-color: var(--special);
     color: #f8fafc;
     padding: 0.5rem 0;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgba(4, 4, 4, 0.2);
 
 }
 
@@ -140,7 +306,7 @@ title::after{
     display: flex;
     gap: 2rem;
     align-items: center;
-    border-top: 1px solid #ffffff34;
+    border-top: 1px solid var(--special);
     padding: 0.75rem 0;
 
 }
@@ -155,7 +321,7 @@ title::after{
 
 #bmi span:last-child{
     font-size: 0.875rem;
-    color: #cbd5e1;
+    color: var(--text-primary);
 
 }
 
@@ -167,13 +333,13 @@ title::after{
 }
 
 #moreinfo{
-    border-top: 1px solid #ffffff34;
+    border-top: 1px solid var(--special);
     padding: 1.5rem;
 
 }
 
 #moreinfo a{
-    color: #6C63FF;
+    color: var(--special);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,12 +370,14 @@ title::after{
     color: #dc2626;
 }
 
+
+
 @media screen and (max-width: 1024px){
     #img{
         display: none;
     }
 }
-
+/* Small screens */
 @media screen and (max-width: 500px){
     #container{
         width: 100%;
@@ -222,5 +390,95 @@ title::after{
         height: 100%;
         border-radius: 0;
         justify-content: center;
+        
     }
+
+    .navbar {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .navbar-nav {
+      flex-direction: row;
+    }
+
+    .navbar-nav i{
+        margin: 0;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+  
+    main {
+      margin: 0;
+    }
+
+
 }
+  
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+    .navbar {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+  
+    .navbar:hover {
+      width: 16rem;
+    }
+  
+    .navbar:hover .link-text {
+      display: inline;
+    }
+  
+    .navbar:hover .logo svg
+    {
+      margin-left: 11rem;
+    }
+  
+    .navbar:hover .logo-text
+    {
+      left: 0px;
+    }
+  }
+  
+  .dark {
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --bg-third :#23232e;
+    --special: #49DBC1;
+  }
+  
+  .light {
+    --text-primary: #1f1f1f;
+    --text-secondary: #000000;
+    --text-tertiary:#d0cdd3;
+    --bg-primary: #ffffff;
+    --bg-secondary: #e4e4e4;
+    --bg-third :#ffffff;
+    --special: #49DBC1;
+  }
+  
+  
+  .theme-icon {
+    display: none;
+  }
+  
+  .dark #darkIcon {
+    display: block;
+  }
+  
+  .light #lightIcon {
+    display: block;
+  }
+  

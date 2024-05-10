@@ -1,7 +1,27 @@
-const form = document.getElementById('form');
-
-
-form.addEventListener('submit', function(event){
+const themeMap = {
+    dark: "light",
+    light: "dark"
+  };
+  
+  const theme = localStorage.getItem('theme')
+    || (tmp = Object.keys(themeMap)[0],
+        localStorage.setItem('theme', tmp),
+        tmp);
+  const bodyClass = document.body.classList;
+  bodyClass.add(theme);
+  
+  function toggleTheme() {
+    const current = localStorage.getItem('theme');
+    const next = themeMap[current];
+  
+    bodyClass.replace(current, next);
+    localStorage.setItem('theme', next);
+  }
+  
+  document.getElementById('themeButton').onclick = toggleTheme;
+  
+  
+  form.addEventListener('submit', function(event){
     event.preventDefault();
     const weight = document.getElementById('weight').value;
     const height = document.getElementById('height').value;
@@ -12,26 +32,26 @@ form.addEventListener('submit', function(event){
 
     document.getElementById('info').classList.remove('hidden');
     if(bmi<16){
-        description = 'Cuidado! Você está muito abaixo do peso!'
+        description = document.getElementById('description').textContent = 'Cuidado! Você está muito abaixo do peso!';
         value.classList.add('takecare');
     }
-    else if (bmi > 16 && bmi < 18.5){
-        description = 'Cuidado! Você está abaixo do peso!'
+    else if (bmi >= 16 && bmi < 18.5){
+        description = document.getElementById('description').textContent = 'Cuidado! Você está abaixo do peso!'
         value.classList.add('attention');
 
     } else if (bmi >= 18.5 && bmi <= 25){
-        description = 'Você está na faixa de peso ideal!'
+        description = document.getElementById('description').textContent = 'Você está na faixa de peso ideal!'
         value.classList.add('yourefine');
 
     }else if (bmi > 25 && bmi <= 30){
-        description = 'Você está com sobre peso!'
+        description = document.getElementById('description').textContent = 'Você está com sobre peso!'
         value.classList.add('attention');
     
-    }else if (bmi < 30 && bmi <= 35){
-        description = 'Cuidado! Você está com Obesidade!'
+    }else if (bmi > 30 && bmi <= 40){
+        description = document.getElementById('description').textContent = 'Cuidado! Você está Obeso!'
         value.classList.add('takecare');
-    }else if (bmi < 35){
-        description = 'Cuidado! Você está com Obesidade morbida!'
+    }else if (bmi > 40){
+        description = document.getElementById('description').textContent = 'Cuidado! Você está com Obesidade morbida!'
         value.classList.add('takecare');
     }
 
@@ -42,4 +62,3 @@ form.addEventListener('submit', function(event){
 
 
 })
-
